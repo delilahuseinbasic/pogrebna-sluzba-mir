@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Card, CardContent } from "./ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { Button } from "./ui/button";
-import { coffinOptions, flowerArrangements, musicians, photographers } from "../utils/mockData";
+import { coffinOptions, flowerArrangements, musicians, photographers } from "./mockData";
 import { Music, Camera, ShoppingCart, Check } from "lucide-react";
-import { useCart } from "../contexts/CartContext";
+import { useCart } from "./CartContext";
 import { toast } from "sonner";
 
 export default function ProductGallery() {
