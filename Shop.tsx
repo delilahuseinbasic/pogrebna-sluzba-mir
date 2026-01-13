@@ -9,7 +9,7 @@ import {
   flowerArrangements,
   musicians,
   photographers,
-} from "../utils/mockData";
+} from "./mockData";
 
 type Category = "all" | "coffins" | "flowers" | "musicians" | "photographers";
 
