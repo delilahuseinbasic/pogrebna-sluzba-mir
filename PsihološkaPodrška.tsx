@@ -1,6 +1,6 @@
 // Placeholder psychologist images
 import { useState } from "react";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Heart, Phone, Mail, Calendar, Clock, Award, MessageCircle, Video } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
