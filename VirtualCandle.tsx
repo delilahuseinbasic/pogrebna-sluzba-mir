@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Flame } from "lucide-react";
 import { Button } from "./ui/button";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface VirtualCandleProps {
   candleCount: number;
