@@ -3,7 +3,7 @@ import { ShoppingCart as CartIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { useCart } from "./CartContext";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 import {
   coffinOptions,
   flowerArrangements,
