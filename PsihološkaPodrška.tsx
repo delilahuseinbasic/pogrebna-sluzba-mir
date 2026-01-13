@@ -1,7 +1,4 @@
-import image_a9b103cd05f0d5f925e6cfc4d90ba478788e1577 from 'figma:asset/a9b103cd05f0d5f925e6cfc4d90ba478788e1577.png';
-import image_543dc4b32697d703a8155efc8ac48c17e519ea28 from 'figma:asset/543dc4b32697d703a8155efc8ac48c17e519ea28.png';
-import image_4ba277c295364e9d0982c4932bc71f28292ad5b0 from 'figma:asset/4ba277c295364e9d0982c4932bc71f28292ad5b0.png';
-import image_680f89899dad7556a25dac263e0c8273effa2f2e from 'figma:asset/346c641ca6ec0ac0c24f70de3934a02e9c47e347.png';
+// Placeholder psychologist images
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Heart, Phone, Mail, Calendar, Clock, Award, MessageCircle, Video } from "lucide-react";
@@ -11,7 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Textarea } from "../components/ui/textarea";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 
 interface Psychologist {
   id: string;
@@ -50,7 +47,7 @@ const psychologists: Psychologist[] = [
     bio: "Profesor Horvat je renomirani psihoterapeut koji se bavi podrškom osobama u krizi. Njegov holistički pristup kombinuje moderne terapijske metode sa dubokim razumijevanjem ljudskih emocija u procesu žalovanja.",
     phone: "062 345 678",
     email: "marko.horvat@terapija.ba",
-    imageUrl: image_4ba277c295364e9d0982c4932bc71f28292ad5b0,
+    imageUrl: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop",
     availableOnline: true,
     languages: ["Bosanski", "Hrvatski", "Engleski"]
   },
@@ -63,7 +60,7 @@ const psychologists: Psychologist[] = [
     bio: "Doktor Zoran Vanev je specijaliziran za rad sa osobama koje doživljavaju složene oblike žalovanja. Njegov saosjećajan pristup i stručnost pomažu klijentima da prođu kroz najteže životne trenutke.",
     phone: "063 456 789",
     email: "zoran.vanev@support.ba",
-    imageUrl: image_a9b103cd05f0d5f925e6cfc4d90ba478788e1577,
+    imageUrl: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop",
     availableOnline: true,
     languages: ["Bosanski", "Engleski", "Njemački"]
   },
@@ -76,7 +73,7 @@ const psychologists: Psychologist[] = [
     bio: "Tomislav Kovač pruža podršku osobama koje se suočavaju sa gubitkom voljenih. Sa magistarskom diplomom iz psihologije i dodatnim treningom u savjetovanju za žalost, pomaže klijentima da nađu mir i prihvatanje.",
     phone: "064 567 890",
     email: "tomislav.kovac@savjetovanje.ba",
-    imageUrl: image_680f89899dad7556a25dac263e0c8273effa2f2e,
+    imageUrl: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=400&fit=crop",
     availableOnline: false,
     languages: ["Bosanski", "Hrvatski"]
   }
