@@ -1,302 +1,274 @@
 import { Link } from "react-router";
-import { Clock, Shield, Phone, ArrowRight, Flame, HeartHandshake, Building, Heart } from "lucide-react";
+import { Clock, Shield, Phone, ArrowRight, Flame, HeartHandshake, Building, Heart, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import Logo from "./Logo";
-import ProductGallery from "./ProductGallery";
 
 export default function Home() {
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 text-white py-24 overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-1/4 w-64 h-64 border rounded-full" style={{ borderColor: '#8b1f1f' }}></div>
-          <div className="absolute bottom-20 right-1/4 w-48 h-48 border rounded-full" style={{ borderColor: '#8b1f1f' }}></div>
-          <div className="absolute top-1/2 left-1/2 w-32 h-32 border rounded-full" style={{ borderColor: '#8b1f1f' }}></div>
-        </div>
+    <div className="min-h-screen">
+      {/* Hero Section - Dark Modern */}
+      <section className="relative bg-black text-white py-32 overflow-hidden">
+        {/* Background gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-neutral-900/90 via-black to-neutral-900/90"></div>
+        
+        {/* Subtle pattern */}
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, #8b1f1f 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
 
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <Logo className="h-24 w-24 mx-auto mb-8" style={{ color: '#8b1f1f' }} />
-            
-            <div className="mb-6">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="h-px w-16" style={{ background: 'linear-gradient(to right, transparent, #8b1f1f)' }}></div>
-                <Flame className="h-6 w-6" style={{ color: '#8b1f1f' }} />
-                <div className="h-px w-16" style={{ background: 'linear-gradient(to left, transparent, #8b1f1f)' }}></div>
-              </div>
+            {/* Logo */}
+            <div className="mb-8">
+              <Logo className="h-20 w-20 mx-auto" style={{ color: '#cd5c5c' }} />
             </div>
 
-            <h1 className="mb-6 text-5xl">Pogrebna sluzba "Mir"</h1>
-            <p className="text-2xl text-neutral-300 mb-4">
-              Sa postovanjem i dostojanstvom
-            </p>
-            <p className="text-xl text-neutral-400 mb-10 max-w-2xl mx-auto">
-              U najtezim trenucima tu smo za vas. Pruzamo profesionalne pogrebne usluge sa
-              postovanjem, dostojanstvom i brigom koju zasluzujete.
+            {/* Main heading */}
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 tracking-tight">
+              Pogrebna služba<br/>
+              <span className="text-[#cd5c5c]">"Mir"</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-300 mb-4">
+              Sa poštovanjem i dostojanstvom
             </p>
             
-            <div className="flex flex-wrap gap-4 justify-center mb-10">
-              <Button asChild size="lg" style={{ backgroundColor: '#6b1717' }} className="hover:opacity-90 text-white">
-                <Link to="/rezervacija">
-                  Rezervisite uslugu
-                  <ArrowRight className="ml-2 h-5 w-5" />
+            <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+              U najtežim trenucima tu smo za vas. Pružamo profesionalne pogrebne usluge 
+              sa poštovanjem, dostojanstvom i brigom koju zaslužujete.
+            </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Button 
+                asChild 
+                size="lg" 
+                className="bg-[#8b1f1f] hover:bg-[#6b1717] text-white px-8 py-6 text-lg rounded-full"
+              >
+                <Link to="/rezervacija" className="flex items-center gap-2">
+                  Rezervišite uslugu
+                  <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" style={{ borderColor: '#8b1f1f', color: '#8b1f1f' }} className="hover:opacity-90">
+              <Button 
+                asChild 
+                size="lg" 
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-6 text-lg rounded-full"
+              >
                 <Link to="/osmrtnice">Pregled osmrtnica</Link>
               </Button>
             </div>
 
-            <div className="inline-flex items-center gap-4 p-6 rounded-xl shadow-2xl" style={{ background: 'linear-gradient(to right, #6b1717, #4a0e0e)' }}>
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                <Phone className="h-6 w-6" />
+            {/* Emergency Contact */}
+            <div className="inline-flex items-center gap-4 px-8 py-5 bg-gradient-to-r from-[#8b1f1f] to-[#6b1717] rounded-2xl shadow-2xl">
+              <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center">
+                <Phone className="h-7 w-7" />
               </div>
               <div className="text-left">
-                <p className="text-sm" style={{ color: '#fbe8e8' }}>Hitna linija - dostupno 24/7</p>
-                <p className="text-2xl">033 123 456</p>
+                <p className="text-sm text-gray-200">Hitna linija - dostupno 24/7</p>
+                <p className="text-3xl font-bold">033 123 456</p>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Bottom wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 80L60 70C120 60 240 40 360 33.3C480 26.7 600 33.3 720 40C840 46.7 960 53.3 1080 50C1200 46.7 1320 33.3 1380 26.7L1440 20V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0Z" fill="#FAFAF9"/>
-          </svg>
+      {/* Features - Clean & Modern */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Zašto odabrati nas?
+            </h2>
+            <div className="w-24 h-1 mx-auto bg-gradient-to-r from-[#8b1f1f] to-[#cd5c5c] rounded-full"></div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                icon: Clock,
+                title: "Dostupni 24/7",
+                description: "Naš tim je dostupan non-stop, svaki dan u godini. Tu smo kada nam najviše trebate."
+              },
+              {
+                icon: HeartHandshake,
+                title: "Sa poštovanjem",
+                description: "Tretiramo svaku porodicu sa poštovanjem i dostojanstvom koje zaslužuju u teškim trenucima."
+              },
+              {
+                icon: Shield,
+                title: "Profesionalnost",
+                description: "Iskusni profesionalci koji se brinu o svakom detalju sa pažnjom i stručnošću."
+              }
+            ].map((feature, idx) => (
+              <Card key={idx} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <CardContent className="p-8 text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#8b1f1f] to-[#cd5c5c] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <feature.icon className="h-10 w-10 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-20 container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="mb-4" style={{ color: '#4a0e0e' }}>Zasto odabrati nas?</h2>
-          <div className="w-24 h-1 mx-auto" style={{ background: 'linear-gradient(to right, #8b1f1f, #6b1717)' }}></div>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <Card className="border-2 hover:shadow-xl transition-all hover:scale-105" style={{ borderColor: 'rgba(139, 31, 31, 0.3)' }}>
-            <CardContent className="pt-8 pb-8 text-center">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(to bottom right, #8b1f1f, #6b1717)' }}>
-                <Clock className="h-10 w-10 text-white" />
-              </div>
-              <h3 className="mb-3" style={{ color: '#4a0e0e' }}>Dostupni 24/7</h3>
-              <p className="text-neutral-600">
-                Nas tim je dostupan non-stop, svaki dan u godini. Tu smo kada nam najvise
-                trebate.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-2 hover:shadow-xl transition-all hover:scale-105" style={{ borderColor: 'rgba(139, 31, 31, 0.3)' }}>
-            <CardContent className="pt-8 pb-8 text-center">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(to bottom right, #8b1f1f, #6b1717)' }}>
-                <HeartHandshake className="h-10 w-10 text-white" />
-              </div>
-              <h3 className="mb-3" style={{ color: '#4a0e0e' }}>Sa postovanjem</h3>
-              <p className="text-neutral-600">
-                Tretiramo svaku porodicu sa postovanjem i dostojanstvom koje zasluzuju u
-                teskim trenucima.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-2 hover:shadow-xl transition-all hover:scale-105" style={{ borderColor: 'rgba(139, 31, 31, 0.3)' }}>
-            <CardContent className="pt-8 pb-8 text-center">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style={{ background: 'linear-gradient(to bottom right, #8b1f1f, #6b1717)' }}>
-                <Shield className="h-10 w-10 text-white" />
-              </div>
-              <h3 className="mb-3" style={{ color: '#4a0e0e' }}>Profesionalnost</h3>
-              <p className="text-neutral-600">
-                Iskusni profesionalci koji se brinu o svakom detalju sa paznjom i strucnoscu.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Services Overview */}
-      <section className="py-20 bg-gradient-to-b from-neutral-100 to-neutral-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="mb-4" style={{ color: '#4a0e0e' }}>Nase usluge</h2>
-            <div className="w-24 h-1 mx-auto mb-4" style={{ background: 'linear-gradient(to right, #8b1f1f, #6b1717)' }}></div>
-            <p className="text-neutral-600 max-w-2xl mx-auto">
-              Nudimo kompletan spektar pogrebnih usluga prilagodenih vasim potrebama i zeljama
+      {/* Services - Dark Section */}
+      <section className="py-24 bg-gradient-to-b from-gray-900 to-black text-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Naše usluge
+            </h2>
+            <div className="w-24 h-1 mx-auto bg-gradient-to-r from-[#8b1f1f] to-[#cd5c5c] rounded-full mb-6"></div>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Nudimo kompletan spektar pogrebnih usluga prilagođenih vašim potrebama i željama
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <Card className="border-2 transition-all" style={{ borderColor: 'rgba(139, 31, 31, 0.2)' }}>
-              <CardContent className="pt-8 pb-8 text-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#fbe8e8' }}>
-                  <Building className="h-8 w-8" style={{ color: '#6b1717' }} />
-                </div>
-                <h3 className="mb-2 text-lg" style={{ color: '#4a0e0e' }}>Organizacija sahrane</h3>
-                <p className="text-sm text-neutral-600">
-                  Kompletna organizacija i koordinacija svih aspekata sahrane
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 transition-all" style={{ borderColor: 'rgba(139, 31, 31, 0.2)' }}>
-              <CardContent className="pt-8 pb-8 text-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#fbe8e8' }}>
-                  <HeartHandshake className="h-8 w-8" style={{ color: '#6b1717' }} />
-                </div>
-                <h3 className="mb-2 text-lg" style={{ color: '#4a0e0e' }}>Priprema tijela</h3>
-                <p className="text-sm text-neutral-600">
-                  Profesionalna priprema i balzamovanje prema najvisim standardima
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 transition-all" style={{ borderColor: 'rgba(139, 31, 31, 0.2)' }}>
-              <CardContent className="pt-8 pb-8 text-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#fbe8e8' }}>
-                  <ArrowRight className="h-8 w-8" style={{ color: '#6b1717' }} />
-                </div>
-                <h3 className="mb-2 text-lg" style={{ color: '#4a0e0e' }}>Transport</h3>
-                <p className="text-sm text-neutral-600">
-                  Siguran i dostojanstven prijevoz na lokaciju sahrane
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 transition-all" style={{ borderColor: 'rgba(139, 31, 31, 0.2)' }}>
-              <CardContent className="pt-8 pb-8 text-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#fbe8e8' }}>
-                  <Flame className="h-8 w-8" style={{ color: '#6b1717' }} />
-                </div>
-                <h3 className="mb-2 text-lg" style={{ color: '#4a0e0e' }}>Memorijali</h3>
-                <p className="text-sm text-neutral-600">
-                  Kreiranje online memorijala i osmrtnica za vase najmilije
-                </p>
-              </CardContent>
-            </Card>
+            {[
+              { icon: Building, title: "Organizacija sahrane", desc: "Kompletna organizacija i koordinacija" },
+              { icon: HeartHandshake, title: "Priprema tijela", desc: "Profesionalna priprema i balzamovanje" },
+              { icon: MapPin, title: "Transport", desc: "Siguran i dostojanstven prijevoz" },
+              { icon: Flame, title: "Memorijali", desc: "Online memorijali i osmrtnice" }
+            ].map((service, idx) => (
+              <Card key={idx} className="bg-white/5 border-white/10 hover:bg-white/10 transition-all backdrop-blur-sm">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-[#8b1f1f]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <service.icon className="h-8 w-8 text-[#cd5c5c]" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">{service.title}</h3>
+                  <p className="text-sm text-gray-400">{service.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           <div className="text-center mt-12">
-            <Button asChild size="lg" style={{ backgroundColor: '#6b1717' }} className="hover:opacity-90 text-white">
-              <Link to="/usluge">
-                Pogledajte sve pakete usluga
-                <ArrowRight className="ml-2 h-5 w-5" />
+            <Button 
+              asChild 
+              size="lg" 
+              className="bg-[#8b1f1f] hover:bg-[#6b1717] text-white px-8 py-6 text-lg rounded-full"
+            >
+              <Link to="/usluge" className="flex items-center gap-2">
+                Pogledajte sve pakete
+                <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Product Gallery */}
-      <ProductGallery />
+      {/* Psychological Support - Image + Content */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Content */}
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#8b1f1f]/10 rounded-full mb-6">
+                  <Heart className="h-5 w-5 text-[#8b1f1f]" />
+                  <span className="text-sm font-semibold text-[#8b1f1f]">PODRŠKA</span>
+                </div>
+                
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                  Psihološka podrška
+                </h2>
+                
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Niste sami u ovim teškim trenucima. Naš tim psihologa specijalizovanih za 
+                  žalovanje tu je da vam pruži podršku, razumijevanje i pomoć.
+                </p>
+                
+                <ul className="space-y-4 mb-8">
+                  {[
+                    "Individualne konsultacije sa iskusnim psiholozima",
+                    "Online i lični susreti prilagođeni potrebama",
+                    "Podrška u procesu žalovanja",
+                    "Grupna i porodična terapija"
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-[#8b1f1f] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-white text-sm">✓</span>
+                      </div>
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <Button 
+                  asChild 
+                  size="lg" 
+                  className="bg-[#8b1f1f] hover:bg-[#6b1717] text-white px-8 py-6 text-lg rounded-full"
+                >
+                  <Link to="/psiholoska-podrska" className="flex items-center gap-2">
+                    Saznajte više
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
 
-      {/* Psychological Support Section */}
-      <section className="py-20 bg-gradient-to-b from-neutral-50 to-neutral-100">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <Card className="border-2 hover:shadow-2xl transition-all overflow-hidden" style={{ borderColor: 'rgba(139, 31, 31, 0.3)' }}>
-              <div className="grid md:grid-cols-2 gap-0">
-                {/* Left side - Content */}
-                <CardContent className="p-10 flex flex-col justify-center">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6" style={{ background: 'linear-gradient(to bottom right, #8b1f1f, #6b1717)' }}>
-                    <Heart className="h-8 w-8 text-white" />
-                  </div>
-                  <h2 className="mb-4" style={{ color: '#4a0e0e' }}>Psihološka podrška</h2>
-                  <p className="text-neutral-600 mb-6 leading-relaxed">
-                    Niste sami u ovim teškim trenucima. Naš tim psihologa specijalizovanih za
-                    žalovanje tu je da vam pruži podršku, razumijevanje i pomoć u procesu
-                    suočavanja sa gubitkom.
-                  </p>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-3 text-neutral-600">
-                      <span className="text-lg" style={{ color: '#8b1f1f' }}>✓</span>
-                      <span>Individualne konsultacije sa iskusnim psiholozima</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-neutral-600">
-                      <span className="text-lg" style={{ color: '#8b1f1f' }}>✓</span>
-                      <span>Online i lični susreti prilagođeni vašim potrebama</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-neutral-600">
-                      <span className="text-lg" style={{ color: '#8b1f1f' }}>✓</span>
-                      <span>Podrška u procesu žalovanja i prihvatanja gubitka</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-neutral-600">
-                      <span className="text-lg" style={{ color: '#8b1f1f' }}>✓</span>
-                      <span>Grupna i porodična terapija</span>
-                    </li>
-                  </ul>
-                  <Button asChild size="lg" style={{ backgroundColor: '#6b1717' }} className="hover:opacity-90 text-white w-full md:w-auto">
-                    <Link to="/psiholoska-podrska">
-                      Saznajte više
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
-                </CardContent>
-
-                {/* Right side - Image */}
-                <div className="relative h-64 md:h-auto">
+              {/* Image */}
+              <div className="relative">
+                <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                   <img
                     src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=600&fit=crop"
                     alt="Psihološka podrška"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent"></div>
                 </div>
+                {/* Decorative element */}
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#8b1f1f] rounded-3xl -z-10"></div>
               </div>
-            </Card>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Recent Obituaries */}
-      <section className="py-20 container mx-auto px-4">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <div className="h-px w-12" style={{ backgroundColor: '#8b1f1f' }}></div>
-            <Flame className="h-6 w-6" style={{ color: '#8b1f1f' }} />
-            <div className="h-px w-12" style={{ backgroundColor: '#8b1f1f' }}></div>
-          </div>
-          <h2 className="mb-4" style={{ color: '#4a0e0e' }}>Nedavne osmrtnice</h2>
-          <p className="text-neutral-600">Posljednji oprostaji i sjecanja</p>
-        </div>
+      {/* CTA Section - Dark */}
+      <section className="py-24 bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, #8b1f1f 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
 
-        <div className="flex justify-center">
-          <Button asChild size="lg" variant="outline" style={{ borderColor: '#8b1f1f', color: '#8b1f1f' }} className="hover:opacity-80">
-            <Link to="/osmrtnice">
-              Pregledajte sve osmrtnice
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 text-white relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 left-1/3 w-48 h-48 border rounded-full" style={{ borderColor: '#8b1f1f' }}></div>
-          <div className="absolute bottom-10 right-1/3 w-64 h-64 border rounded-full" style={{ borderColor: '#8b1f1f' }}></div>
-        </div>
-
-        <div className="container mx-auto px-4 text-center relative">
-          <Flame className="h-16 w-16 mx-auto mb-6" style={{ color: '#8b1f1f' }} />
-          <h2 className="mb-4">Trebate hitnu pomoc?</h2>
-          <p className="text-xl text-neutral-300 mb-10 max-w-2xl mx-auto">
-            Nasa hitna linija je dostupna 24 sata dnevno, 7 dana u sedmici. Nazovite nas u bilo
-            koje vrijeme.
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <Flame className="h-16 w-16 mx-auto mb-8 text-[#cd5c5c]" />
+          
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Trebate hitnu pomoć?
+          </h2>
+          
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Naša hitna linija je dostupna 24 sata dnevno, 7 dana u sedmici. 
+            Nazovite nas u bilo koje vrijeme.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button size="lg" style={{ backgroundColor: '#6b1717' }} className="hover:opacity-90 text-white" asChild>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg" 
+              className="bg-[#8b1f1f] hover:bg-[#6b1717] text-white px-8 py-6 text-lg rounded-full" 
+              asChild
+            >
               <a href="tel:033123456" className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
-                Nazovi odmah: 033 123 456
+                Nazovi: 033 123 456
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild style={{ borderColor: '#8b1f1f', color: '#8b1f1f' }} className="hover:opacity-90">
-              <Link to="/kontakt">Posaljite upit</Link>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-6 text-lg rounded-full"
+              asChild
+            >
+              <Link to="/kontakt">Pošaljite upit</Link>
             </Button>
           </div>
         </div>
