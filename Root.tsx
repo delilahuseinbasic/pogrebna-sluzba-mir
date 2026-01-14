@@ -3,7 +3,7 @@ import { Phone, Mail, LogIn, LogOut, User } from "lucide-react";
 import Logo from "./Logo";
 import ShoppingCart from "./ShoppingCart";
 import { Toaster } from "./ui/sonner";
-import { useAuth } from "./AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import {
